@@ -86,6 +86,7 @@
 |78| [What is AOT?](#what-is-aot)|
 |79| [Why do we need compilation process?](#why-do-we-need-compilation-process)|
 |80| [What are the advantages with AOT?](#what-are-the-advantages-with-aot)|
+|81| [What are the ways to control AOT compilation?](#what-are-the-ways-to-control-aot-compilation)|
 
 1. ### What is Angular Framework?
 
@@ -1064,12 +1065,16 @@
     The Angular components and templates cannot be understood by the browser directly. Due to that Angular applications require a compilation process before they can run in a browser. For example, In AOT compilation, both Angular HTML and TypeScript code converted into efficient JavaScript code during the build phase before browser runs it.
 80. ### What are the advantages with AOT?
     Below are the list of AOT benefits,
-    1. Faster rendering
-    2. Fewer asynchronous requests
-    3. Smaller Angular framework download size
-    4. Detect template errors earlier
-    5. Better security
+    1. **Faster rendering:** The browser downloads a pre-compiled version of the application. So it can render the application immediately without compiling the app.
+    2. **Fewer asynchronous requests:** It inlines external HTML templates and CSS style sheets within the application javascript which eliminates separate ajax requests.
+    3. **Smaller Angular framework download size:** Doesn't require downloading the Angular compiler. Hence it dramatically reduces the application payload.
+    4. **Detect template errors earlier:** Detects and reports template binding errors during the build step itself
+    5. **Better security:** It compiles HTML templates and components into JavaScript.  So there won't be any injection attacks.
 
+81. ### What are the ways to control AOT compilation?
+    You can control your app compilation in two ways
+    1. By providing template compiler options in the `tsconfig.json` file
+    2. By configuring Angular metadata with decorators
 
 
 
